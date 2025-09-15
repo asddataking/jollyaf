@@ -23,10 +23,12 @@ const config: Config = {
         'mistletoe': '#10B981',
         'frost': '#E5E7EB',
       },
-      fontFamily: {
-        'sans': ['Inter', 'sans-serif'],
-        'display': ['Bebas Neue', 'Anton', 'sans-serif'],
-      },
+            fontFamily: {
+              'sans': ['Poppins', 'sans-serif'],
+              'display': ['Mountains of Christmas', 'cursive'],
+              'accent': ['Candy Cane', 'cursive'],
+              'fun': ['Snowburst One', 'cursive'],
+            },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
