@@ -10,13 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         'deep-red': '#B1002E',
-        'evergreen': '#166534',
-        'forest-green': '#0F5132',
-        'emerald': '#10B981',
-        'lime': '#84CC16',
+        'christmas-red': '#DC2626',
+        'holly-green': '#059669',
+        'pine-green': '#047857',
+        'christmas-gold': '#F59E0B',
+        'warm-gold': '#D97706',
+        'snow-white': '#F8FAFC',
+        'winter-blue': '#1E40AF',
+        'midnight-blue': '#1E3A8A',
         'off-white': '#FFF8F0',
-        'gold': '#D4AF37',
-        'dark-green': '#064E3B',
+        'candy-cane': '#EF4444',
+        'mistletoe': '#10B981',
+        'frost': '#E5E7EB',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],
@@ -28,6 +33,8 @@ const config: Config = {
         'bounce-slow': 'bounce 3s infinite',
         'wiggle': 'wiggle 1s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'twinkle': 'twinkle 2s ease-in-out infinite',
+        'snow': 'snow 10s linear infinite',
       },
       keyframes: {
         float: {
@@ -39,8 +46,16 @@ const config: Config = {
           '50%': { transform: 'rotate(3deg)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px #10B981, 0 0 10px #10B981, 0 0 15px #10B981' },
-          '100%': { boxShadow: '0 0 10px #10B981, 0 0 20px #10B981, 0 0 30px #10B981' },
+          '0%': { boxShadow: '0 0 5px #F59E0B, 0 0 10px #F59E0B, 0 0 15px #F59E0B' },
+          '100%': { boxShadow: '0 0 10px #F59E0B, 0 0 20px #F59E0B, 0 0 30px #F59E0B' },
+        },
+        twinkle: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.3' },
+        },
+        snow: {
+          '0%': { transform: 'translateY(-100vh)' },
+          '100%': { transform: 'translateY(100vh)' },
         },
       },
     },
