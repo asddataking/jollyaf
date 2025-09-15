@@ -262,7 +262,17 @@ export default function Home() {
       </motion.header>
 
       {/* Hero Section */}
-      <Section id="hero" className="min-h-screen flex items-center justify-center relative bg-white">
+      <Section id="hero" className="min-h-screen flex items-center justify-center relative">
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+            alt="Christmas party background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
+        
         <div className="text-center space-y-8 relative z-10">
           {/* Profile Avatar */}
           <motion.div
@@ -290,13 +300,13 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-4"
           >
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-black leading-tight">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight drop-shadow-lg">
               Jolly AF
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-black max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl font-bold text-white max-w-2xl mx-auto drop-shadow-lg">
               The Santa Your Mom Warned You About
             </p>
-            <p className="text-lg font-bold text-gray-700 max-w-xl mx-auto">
+            <p className="text-lg font-bold text-gray-200 max-w-xl mx-auto drop-shadow-lg">
               Comedy Santa for bars, house parties, office shenanigans, and pet fundraisers. December bookings only.
             </p>
           </motion.div>
@@ -311,7 +321,7 @@ export default function Home() {
             {['Adults Only', 'Clean(ish) Comedy', 'Metro Detroit', 'Pet Fundraisers'].map((badge, index) => (
               <motion.span 
                 key={badge}
-                className="bg-gray-100 px-4 py-2 rounded-full text-sm font-bold border border-gray-300 text-black"
+                className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold border border-white/50 text-black"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -381,6 +391,14 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                alt="Santa at party" 
+                className="w-full h-80 object-cover rounded-2xl shadow-lg"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            </div>
             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
               <p className="text-xl font-bold text-black leading-relaxed">
                 I'm Jolly AF — the loud laugh, big red suit, and zero boring bits. Expect crowd banter, a few roasts, and pics you'll still laugh at in July. Clean(ish) or spicy — your call.
@@ -443,8 +461,16 @@ export default function Home() {
       </Section>
 
       {/* Packages Section */}
-      <Section id="packages" className="bg-white">
-        <div className="text-center mb-16">
+      <Section id="packages" className="bg-white relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Christmas decorations background" 
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="text-center mb-16 relative z-10">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -463,7 +489,7 @@ export default function Home() {
           </motion.p>
         </div>
         
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-8 relative z-10">
           <PackageCard
             title="30 Minutes"
             price="$150"
@@ -538,16 +564,27 @@ export default function Home() {
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
+          {[
+            { src: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", alt: "Christmas party 1" },
+            { src: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", alt: "Christmas party 2" },
+            { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 3" },
+            { src: "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 4" },
+            { src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 5" },
+            { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 6" }
+          ].map((image, i) => (
             <motion.div 
               key={i} 
-              className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 border border-gray-200 hover:border-christmas-gold/40 transition-all duration-300"
+              className="aspect-square rounded-2xl overflow-hidden border border-gray-200 hover:border-christmas-gold/40 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
             >
-              <span className="text-6xl">📸</span>
+              <img 
+                src={image.src} 
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           ))}
         </div>
