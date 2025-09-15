@@ -262,7 +262,7 @@ export default function Home() {
       </motion.header>
 
       {/* Hero Section */}
-      <Section id="hero" className="min-h-screen flex items-center justify-center relative bg-christmas-red">
+      <Section id="hero" className="min-h-screen flex items-center justify-center relative bg-christmas-red border-8 border-holly-green">
         <div className="w-full px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
           <div className="text-left space-y-8">
@@ -347,18 +347,6 @@ export default function Home() {
               >
                 See Packages
               </motion.button>
-            </motion.div>
-
-            {/* Limited Time Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="mt-6"
-            >
-              <div className="inline-block bg-holly-green text-white px-4 py-2 rounded-full text-xs font-bold font-accent">
-                December Only • Limited Slots
-              </div>
             </motion.div>
           </div>
 
