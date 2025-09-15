@@ -92,8 +92,8 @@ const PackageCard = ({ title, price, duration, features, onBook, isPopular = fal
     whileHover={{ y: -10, scale: 1.02 }}
     className={`relative bg-white rounded-2xl shadow-lg p-8 border-2 transition-all duration-300 ${
       isPopular 
-        ? 'border-christmas-gold shadow-christmas-gold/20 ring-2 ring-christmas-gold/20' 
-        : 'border-gray-200 hover:border-christmas-gold'
+        ? 'border-holly-green shadow-holly-green/20 ring-2 ring-holly-green/20' 
+        : 'border-gray-200 hover:border-holly-green'
     }`}
   >
     {isPopular && (
@@ -423,7 +423,8 @@ export default function Home() {
                 'Memorable photo moments',
                 'Customized content for your crowd',
                 'Professional setup & cleanup',
-                'Pet-friendly events welcome'
+                'Pet-friendly events welcome',
+                'Milk & cookies required! 🥛🍪'
               ].map((item, index) => (
                 <motion.div 
                   key={index}
@@ -469,9 +470,9 @@ export default function Home() {
             duration="Quick & fun"
             features={[
               "Host hype & crowd banter",
+              "Epic entrance bit",
               "Photo ops with guests",
-              "Perfect for quick events",
-              "Great for bars & pubs"
+              "Perfect for bars & pubs"
             ]}
             onBook={() => scrollToSection('booking')}
           />
@@ -480,10 +481,10 @@ export default function Home() {
             price="$250"
             duration="Most popular"
             features={[
-              "Full comedy set",
-              "Entrance bit & games",
+              "Epic entrance bit",
+              "Photo ops included",
               "Naughty List gag",
-              "Photo ops included"
+              "Crowd interaction & banter"
             ]}
             onBook={() => scrollToSection('booking')}
             isPopular={true}
@@ -493,10 +494,10 @@ export default function Home() {
             price="$350"
             duration="Extended fun"
             features={[
-              "Extended comedy set",
-              "Raffle/white-elephant MC",
-              "Custom roasts & banter",
-              "Perfect for office events"
+              "Epic entrance bit",
+              "Photo ops included",
+              "Interactive game",
+              "Custom roasts & banter"
             ]}
             onBook={() => scrollToSection('booking')}
           />
@@ -507,7 +508,7 @@ export default function Home() {
             features={[
               "Pet fundraisers welcome",
               "Custom duration & content",
-              "Special event packages",
+              "Travel fees may apply",
               "Contact for pricing"
             ]}
             onBook={() => scrollToSection('booking')}
@@ -601,6 +602,13 @@ export default function Home() {
             onToggle={() => handleAccordionToggle("Do you bring props?")}
           >
             Yes! I bring the Naughty List, candy canes, and other festive props to enhance the experience.
+          </Accordion>
+          <Accordion
+            title="What about refreshments?"
+            isOpen={activeAccordion === "What about refreshments?"}
+            onToggle={() => handleAccordionToggle("What about refreshments?")}
+          >
+            Milk and cookies are required for all visits! It's essential fuel for Santa's performance. 🥛🍪
           </Accordion>
         </div>
       </Section>
@@ -775,7 +783,7 @@ export default function Home() {
                   rows={4}
                   value={formData.notes}
                   onChange={handleInputChange}
-                  placeholder="Any special requests, crowd size, pet fundraiser details, or other details..."
+                  placeholder="Any special requests, crowd size, pet fundraiser details, or other details... (Note: Milk and cookies are required for all visits!)"
                   className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 font-bold"
                 />
               </div>
