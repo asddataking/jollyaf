@@ -262,18 +262,8 @@ export default function Home() {
       </motion.header>
 
       {/* Hero Section */}
-      <Section id="hero" className="min-h-screen flex items-center justify-center relative">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
-            alt="Christmas lights bokeh background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+      <Section id="hero" className="min-h-screen flex items-center justify-center relative bg-christmas-red">
+        <div className="w-full px-6 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Text Content */}
           <div className="text-left space-y-8">
             {/* Profile Avatar */}
@@ -302,13 +292,13 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-4"
             >
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight drop-shadow-lg">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight">
                 Jolly AF
               </h1>
-              <p className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
+              <p className="text-lg md:text-xl font-bold text-white">
                 The Santa Your Mom Warned You About
               </p>
-              <p className="text-base font-bold text-gray-200 drop-shadow-lg">
+              <p className="text-base font-bold text-gray-200">
                 Comedy Santa for bars, house parties, office shenanigans, and pet fundraisers. December bookings only.
               </p>
             </motion.div>
