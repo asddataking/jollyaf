@@ -266,106 +266,132 @@ export default function Home() {
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
             alt="Christmas lights bokeh background" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
-        <div className="text-center space-y-8 relative z-10">
-          {/* Profile Avatar */}
-          <motion.div
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ duration: 0.8, type: "spring" }}
-            className="relative mx-auto w-32 h-32 mb-8"
-          >
-            <div className="w-full h-full bg-gradient-to-br from-christmas-red to-christmas-gold rounded-full flex items-center justify-center text-6xl shadow-2xl ring-4 ring-christmas-gold/30">
-              🎅
-            </div>
-            <motion.div 
-              className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-holly-green to-christmas-gold rounded-full flex items-center justify-center text-white text-sm font-bold"
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Side - Text Content */}
+          <div className="text-left space-y-8">
+            {/* Profile Avatar */}
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, type: "spring" }}
+              className="relative w-24 h-24 mb-6"
             >
-              AF
-            </motion.div>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight drop-shadow-lg">
-              Jolly AF
-            </h1>
-            <p className="text-xl md:text-2xl font-bold text-white max-w-2xl mx-auto drop-shadow-lg">
-              The Santa Your Mom Warned You About
-            </p>
-            <p className="text-lg font-bold text-gray-200 max-w-xl mx-auto drop-shadow-lg">
-              Comedy Santa for bars, house parties, office shenanigans, and pet fundraisers. December bookings only.
-            </p>
-          </motion.div>
-
-          {/* Trust Badges */}
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4 mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            {['Adults Only', 'Clean(ish) Comedy', 'Metro Detroit', 'Pet Fundraisers'].map((badge, index) => (
-              <motion.span 
-                key={badge}
-                className="bg-white/90 px-4 py-2 rounded-full text-sm font-bold border border-white/50 text-black"
-                whileHover={{ scale: 1.05 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
+              <div className="w-full h-full bg-gradient-to-br from-christmas-red to-christmas-gold rounded-full flex items-center justify-center text-4xl shadow-2xl ring-4 ring-christmas-gold/30">
+                🎅
+              </div>
+              <motion.div 
+                className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-holly-green to-christmas-gold rounded-full flex items-center justify-center text-white text-xs font-bold"
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
               >
-                {badge}
-              </motion.span>
-            ))}
-          </motion.div>
+                AF
+              </motion.div>
+            </motion.div>
 
-          {/* CTA Buttons */}
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <motion.button
-              onClick={() => scrollToSection('booking')}
-              className="bg-christmas-red text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-christmas-red/90 transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+            {/* Main Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-4"
             >
-              Book Your Date
-            </motion.button>
-            <motion.button
-              onClick={() => scrollToSection('packages')}
-              className="border-2 border-christmas-gold text-christmas-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-christmas-gold hover:text-white transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              See Packages
-            </motion.button>
-          </motion.div>
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-white leading-tight drop-shadow-lg">
+                Jolly AF
+              </h1>
+              <p className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
+                The Santa Your Mom Warned You About
+              </p>
+              <p className="text-base font-bold text-gray-200 drop-shadow-lg">
+                Comedy Santa for bars, house parties, office shenanigans, and pet fundraisers. December bookings only.
+              </p>
+            </motion.div>
 
-          {/* Limited Time Badge */}
+            {/* Trust Badges */}
+            <motion.div 
+              className="flex flex-wrap gap-4 mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              {['Adults Only', 'Clean(ish) Comedy', 'Metro Detroit', 'Pet Fundraisers'].map((badge, index) => (
+                <motion.span 
+                  key={badge}
+                  className="bg-white/90 px-3 py-2 rounded-full text-xs font-bold border border-white/50 text-black"
+                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  {badge}
+                </motion.span>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 mt-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <motion.button
+                onClick={() => scrollToSection('booking')}
+                className="bg-christmas-red text-white px-6 py-3 rounded-full font-bold text-base hover:bg-christmas-red/90 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Book Your Date
+              </motion.button>
+              <motion.button
+                onClick={() => scrollToSection('packages')}
+                className="border-2 border-christmas-gold text-christmas-gold px-6 py-3 rounded-full font-bold text-base hover:bg-christmas-gold hover:text-white transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                See Packages
+              </motion.button>
+            </motion.div>
+
+            {/* Limited Time Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="mt-6"
+            >
+              <div className="inline-block bg-holly-green text-white px-4 py-2 rounded-full text-xs font-bold font-accent">
+                December Only • Limited Slots
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Side - Santa Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="mt-8"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex justify-center lg:justify-end"
           >
-            <div className="inline-block bg-holly-green text-white px-6 py-3 rounded-full text-sm font-bold font-accent">
-              December Only • Limited Slots
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                alt="Professional Santa Claus" 
+                className="w-full max-w-md h-auto rounded-2xl shadow-2xl border-4 border-christmas-gold/30"
+              />
+              <motion.div 
+                className="absolute -top-4 -right-4 w-12 h-12 bg-christmas-gold rounded-full flex items-center justify-center text-2xl"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                ⭐
+              </motion.div>
             </div>
           </motion.div>
         </div>
