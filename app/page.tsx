@@ -42,16 +42,16 @@ const Section = ({ id, children, className = '' }: { id: string; children: React
 // Enhanced Accordion Component
 const Accordion = ({ title, children, isOpen, onToggle }: { title: string; children: React.ReactNode; isOpen: boolean; onToggle: () => void }) => (
   <motion.div 
-    className="border-b border-christmas-gold/20 bg-midnight-blue/50 backdrop-blur-sm rounded-lg mb-4 overflow-hidden"
+    className="border-b border-christmas-gold/20 bg-white/80 backdrop-blur-sm rounded-lg mb-4 overflow-hidden"
     whileHover={{ scale: 1.02 }}
     transition={{ duration: 0.2 }}
   >
     <motion.button
-      className="w-full py-6 px-6 text-left flex justify-between items-center hover:text-christmas-gold transition-colors"
+      className="w-full py-6 px-6 text-left flex justify-between items-center hover:text-christmas-red transition-colors"
       onClick={onToggle}
       whileTap={{ scale: 0.98 }}
     >
-      <span className="font-semibold text-lg text-snow-white">{title}</span>
+      <span className="font-semibold text-lg text-gray-900">{title}</span>
       <motion.span 
         className={`text-christmas-gold text-xl transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         animate={{ rotate: isOpen ? 180 : 0 }}
@@ -66,7 +66,7 @@ const Accordion = ({ title, children, isOpen, onToggle }: { title: string; child
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="px-6 pb-6 text-frost"
+          className="px-6 pb-6 text-gray-600"
         >
           {children}
         </motion.div>
@@ -90,7 +90,7 @@ const PackageCard = ({ title, price, duration, features, onBook, isPopular = fal
     transition={{ duration: 0.6 }}
     viewport={{ once: true }}
     whileHover={{ y: -10, scale: 1.02 }}
-    className={`relative bg-midnight-blue/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border-2 transition-all duration-300 ${
+    className={`relative bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 border-2 transition-all duration-300 ${
       isPopular 
         ? 'border-christmas-gold shadow-christmas-gold/20 ring-2 ring-christmas-gold/20' 
         : 'border-christmas-gold/30 hover:border-christmas-gold'
@@ -107,11 +107,11 @@ const PackageCard = ({ title, price, duration, features, onBook, isPopular = fal
     )}
     
     <div className="text-center mb-6">
-      <h3 className="text-3xl font-display text-snow-white mb-2">{title}</h3>
+      <h3 className="text-3xl font-display text-gray-900 mb-2">{title}</h3>
       <div className="text-4xl font-bold bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-2">
         {price}
       </div>
-      <div className="text-sm text-frost">{duration}</div>
+      <div className="text-sm text-gray-600">{duration}</div>
     </div>
     
     <ul className="space-y-3 mb-8">
@@ -124,7 +124,7 @@ const PackageCard = ({ title, price, duration, features, onBook, isPopular = fal
           transition={{ delay: index * 0.1 }}
         >
           <span className="text-christmas-gold mr-3 text-lg">✓</span>
-          <span className="text-snow-white">{feature}</span>
+          <span className="text-gray-700">{feature}</span>
         </motion.li>
       ))}
     </ul>
@@ -134,7 +134,7 @@ const PackageCard = ({ title, price, duration, features, onBook, isPopular = fal
       className={`w-full py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 ${
         isPopular
           ? 'bg-gradient-to-r from-christmas-red to-christmas-gold text-white hover:shadow-lg hover:shadow-christmas-red/25'
-          : 'bg-christmas-gold text-midnight-blue hover:bg-warm-gold'
+          : 'bg-christmas-gold text-white hover:bg-warm-gold'
       }`}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -200,7 +200,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-midnight-blue via-winter-blue to-pine-green relative overflow-hidden">
+    <div className="min-h-screen bg-slate-900 relative overflow-hidden">
       {/* Christmas Night Background Elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Snowflakes */}
@@ -235,7 +235,7 @@ export default function Home() {
 
       {/* Modern Header */}
       <motion.header 
-        className="sticky top-0 z-50 bg-midnight-blue/90 backdrop-blur-md shadow-lg border-b border-christmas-gold/30"
+        className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -253,7 +253,7 @@ export default function Home() {
                 <motion.button 
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())} 
-                  className="hover:text-christmas-gold transition-colors font-medium text-snow-white"
+                  className="hover:text-christmas-red transition-colors font-bold text-black text-lg"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -275,7 +275,23 @@ export default function Home() {
 
       {/* Hero Section - Christmas Night Style */}
       <Section id="hero" className="min-h-screen flex items-center justify-center relative">
-        <div className="text-center space-y-8">
+        {/* Christmas Background Image */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-gradient-to-br from-slate-800 via-slate-900 to-blue-900 flex items-center justify-center">
+            {/* Christmas Scene Background */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="text-9xl absolute top-20 left-20 text-christmas-gold animate-twinkle">🎄</div>
+              <div className="text-8xl absolute top-40 right-32 text-holly-green animate-twinkle">🎅</div>
+              <div className="text-7xl absolute bottom-40 left-32 text-christmas-red animate-twinkle">🎁</div>
+              <div className="text-6xl absolute bottom-20 right-20 text-christmas-gold animate-twinkle">⭐</div>
+              <div className="text-8xl absolute top-60 left-1/2 transform -translate-x-1/2 text-holly-green animate-twinkle">🦌</div>
+              <div className="text-5xl absolute top-32 left-1/3 text-christmas-gold animate-twinkle">❄️</div>
+              <div className="text-6xl absolute bottom-60 right-1/3 text-christmas-red animate-twinkle">🎄</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center space-y-8 relative z-10">
           {/* Profile Avatar */}
           <motion.div
             initial={{ scale: 0, rotate: -180 }}
@@ -302,13 +318,13 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-4"
           >
-            <h1 className="text-5xl md:text-7xl font-display bg-gradient-to-r from-christmas-red via-christmas-gold to-holly-green bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl font-display bg-gradient-to-r from-christmas-red via-christmas-gold to-holly-green bg-clip-text text-transparent leading-tight drop-shadow-lg">
               Jolly AF
             </h1>
-            <p className="text-xl md:text-2xl text-snow-white max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white max-w-2xl mx-auto drop-shadow-lg">
               The Santa Your Mom Warned You About
             </p>
-            <p className="text-lg text-frost max-w-xl mx-auto">
+            <p className="text-lg text-gray-200 max-w-xl mx-auto drop-shadow-lg">
               Comedy Santa for bars, house parties, and office shenanigans. December bookings only.
             </p>
           </motion.div>
@@ -323,7 +339,7 @@ export default function Home() {
             {['Adults Only', 'Clean(ish) Comedy', 'Metro Detroit'].map((badge, index) => (
               <motion.span 
                 key={badge}
-                className="bg-midnight-blue/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-christmas-gold/30 text-christmas-gold"
+                className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold border border-christmas-gold/30 text-christmas-red"
                 whileHover={{ scale: 1.05 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -351,7 +367,7 @@ export default function Home() {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('packages')}
-              className="border-2 border-christmas-gold text-christmas-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-christmas-gold hover:text-midnight-blue transition-all duration-300"
+              className="border-2 border-christmas-gold text-christmas-gold px-8 py-4 rounded-full font-bold text-lg hover:bg-christmas-gold hover:text-slate-900 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -374,7 +390,7 @@ export default function Home() {
       </Section>
 
       {/* About Section */}
-      <Section id="about" className="bg-midnight-blue/20 backdrop-blur-sm">
+      <Section id="about" className="bg-white/95 backdrop-blur-sm">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-6"
@@ -394,7 +410,7 @@ export default function Home() {
             className="space-y-6"
           >
             <div className="bg-gradient-to-br from-christmas-red/10 to-christmas-gold/10 p-8 rounded-2xl border border-christmas-gold/20">
-              <p className="text-xl text-snow-white leading-relaxed">
+              <p className="text-xl text-gray-800 leading-relaxed">
                 I'm Jolly AF — the loud laugh, big red suit, and zero boring bits. Expect crowd banter, a few roasts, and pics you'll still laugh at in July. Clean(ish) or spicy — your call.
               </p>
             </div>
@@ -408,14 +424,14 @@ export default function Home() {
               ].map((item, index) => (
                 <motion.div 
                   key={index}
-                  className="flex items-center space-x-3 p-4 bg-midnight-blue/40 rounded-xl border border-christmas-gold/20"
+                  className="flex items-center space-x-3 p-4 bg-white/80 rounded-xl border border-christmas-gold/20"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
                 >
                   <span className="text-2xl">{item.icon}</span>
-                  <span className="text-sm font-medium text-snow-white">{item.text}</span>
+                  <span className="text-sm font-medium text-gray-700">{item.text}</span>
                 </motion.div>
               ))}
             </div>
@@ -444,7 +460,7 @@ export default function Home() {
                   transition={{ delay: index * 0.1 }}
                 >
                   <span className="text-christmas-gold text-xl mt-1">✓</span>
-                  <span className="text-snow-white">{item}</span>
+                  <span className="text-gray-700">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -453,7 +469,7 @@ export default function Home() {
       </Section>
 
       {/* Packages Section */}
-      <Section id="packages" className="bg-gradient-to-br from-holly-green/10 to-pine-green/10">
+      <Section id="packages" className="bg-white/95 backdrop-blur-sm">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-6"
@@ -464,7 +480,7 @@ export default function Home() {
             Packages
           </motion.h2>
           <motion.p 
-            className="text-xl text-snow-white"
+            className="text-xl text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -515,7 +531,7 @@ export default function Home() {
       </Section>
 
       {/* Gallery Section */}
-      <Section id="gallery" className="bg-midnight-blue/20 backdrop-blur-sm">
+      <Section id="gallery" className="bg-white/95 backdrop-blur-sm">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-6"
@@ -526,7 +542,7 @@ export default function Home() {
             Gallery
           </motion.h2>
           <motion.p 
-            className="text-xl text-snow-white"
+            className="text-xl text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -539,7 +555,7 @@ export default function Home() {
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <motion.div 
               key={i} 
-              className="aspect-square bg-gradient-to-br from-christmas-red/10 to-christmas-gold/10 rounded-2xl flex items-center justify-center text-frost border border-christmas-gold/20 hover:border-christmas-gold/40 transition-all duration-300"
+              className="aspect-square bg-gradient-to-br from-christmas-red/10 to-christmas-gold/10 rounded-2xl flex items-center justify-center text-gray-400 border border-christmas-gold/20 hover:border-christmas-gold/40 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
@@ -552,7 +568,7 @@ export default function Home() {
       </Section>
 
       {/* FAQ Section */}
-      <Section id="faq" className="bg-gradient-to-br from-holly-green/10 to-pine-green/10">
+      <Section id="faq" className="bg-white/95 backdrop-blur-sm">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-6"
@@ -563,7 +579,7 @@ export default function Home() {
             FAQ
           </motion.h2>
           <motion.p 
-            className="text-xl text-snow-white"
+            className="text-xl text-gray-600"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -605,7 +621,7 @@ export default function Home() {
       </Section>
 
       {/* Booking Section */}
-      <Section id="booking" className="bg-midnight-blue/20 backdrop-blur-sm">
+      <Section id="booking" className="bg-white/95 backdrop-blur-sm">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-6"
@@ -616,7 +632,7 @@ export default function Home() {
             Lock Your Date
           </motion.h2>
           <motion.p 
-            className="text-xl text-snow-white max-w-2xl mx-auto"
+            className="text-xl text-gray-600 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -639,21 +655,21 @@ export default function Home() {
               ✓
             </motion.div>
             <h3 className="text-3xl font-display text-christmas-gold mb-4">Thanks!</h3>
-            <p className="text-snow-white text-lg">I'll confirm within 24 hours.</p>
+            <p className="text-gray-700 text-lg">I'll confirm within 24 hours.</p>
           </motion.div>
         ) : (
           <div className="max-w-2xl mx-auto">
             {/* TODO: Replace form with GHL calendar embed */}
             <motion.form 
               onSubmit={handleFormSubmit} 
-              className="space-y-6 bg-midnight-blue/80 backdrop-blur-sm p-8 rounded-2xl border border-christmas-gold/20 shadow-xl"
+              className="space-y-6 bg-white/90 backdrop-blur-sm p-8 rounded-2xl border border-christmas-gold/20 shadow-xl"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                     Name *
                   </label>
                   <input
@@ -663,11 +679,11 @@ export default function Home() {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
                     Email *
                   </label>
                   <input
@@ -677,14 +693,14 @@ export default function Home() {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   />
                 </div>
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
                     Phone *
                   </label>
                   <input
@@ -694,11 +710,11 @@ export default function Home() {
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
-                  <label htmlFor="package" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="package" className="block text-sm font-semibold text-gray-700 mb-2">
                     Package *
                   </label>
                   <select
@@ -707,7 +723,7 @@ export default function Home() {
                     required
                     value={formData.package}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   >
                     <option value="">Select a package</option>
                     <option value="Bar Set - $200">Bar Set - $200</option>
@@ -718,7 +734,7 @@ export default function Home() {
               </div>
               
               <div>
-                <label htmlFor="venue" className="block text-sm font-semibold text-snow-white mb-2">
+                <label htmlFor="venue" className="block text-sm font-semibold text-gray-700 mb-2">
                   Venue Address *
                 </label>
                 <input
@@ -728,13 +744,13 @@ export default function Home() {
                   required
                   value={formData.venue}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                  className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="date" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="date" className="block text-sm font-semibold text-gray-700 mb-2">
                     Preferred Date *
                   </label>
                   <input
@@ -744,11 +760,11 @@ export default function Home() {
                     required
                     value={formData.date}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   />
                 </div>
                 <div>
-                  <label htmlFor="time" className="block text-sm font-semibold text-snow-white mb-2">
+                  <label htmlFor="time" className="block text-sm font-semibold text-gray-700 mb-2">
                     Preferred Time *
                   </label>
                   <input
@@ -758,13 +774,13 @@ export default function Home() {
                     required
                     value={formData.time}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                    className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="notes" className="block text-sm font-semibold text-snow-white mb-2">
+                <label htmlFor="notes" className="block text-sm font-semibold text-gray-700 mb-2">
                   Additional Notes
                 </label>
                 <textarea
@@ -774,7 +790,7 @@ export default function Home() {
                   value={formData.notes}
                   onChange={handleInputChange}
                   placeholder="Any special requests, crowd size, or other details..."
-                  className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300 bg-midnight-blue/40 text-snow-white"
+                  className="w-full px-4 py-3 border border-christmas-gold/20 rounded-xl focus:ring-2 focus:ring-christmas-gold focus:border-transparent transition-all duration-300"
                 />
               </div>
               
@@ -792,7 +808,7 @@ export default function Home() {
       </Section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-midnight-blue to-pine-green text-white py-16">
+      <footer className="bg-slate-900 text-white py-16">
         <div className="max-w-4xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <motion.div
@@ -801,7 +817,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <div className="text-3xl font-display bg-gradient-to-r from-christmas-red to-christmas-gold bg-clip-text text-transparent mb-4">JOLLY AF</div>
-              <p className="text-frost">
+              <p className="text-gray-300">
                 The Santa your mom warned you about.
               </p>
             </motion.div>
@@ -812,12 +828,12 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="font-display text-xl mb-4 text-christmas-gold">Contact</h3>
-              <p className="text-frost mb-2">
+              <p className="text-gray-300 mb-2">
                 <a href="mailto:bookings@bookjollyaf.com" className="hover:text-christmas-gold transition-colors">
                   bookings@bookjollyaf.com
                 </a>
               </p>
-              <p className="text-frost">
+              <p className="text-gray-300">
                 Metro Detroit Area
               </p>
             </motion.div>
@@ -844,7 +860,7 @@ export default function Home() {
           </div>
           
           <motion.div 
-            className="border-t border-christmas-gold/20 mt-12 pt-8 text-center text-frost"
+            className="border-t border-christmas-gold/20 mt-12 pt-8 text-center text-gray-300"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
