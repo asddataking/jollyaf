@@ -200,7 +200,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
+    <div className="min-h-screen bg-christmas-red relative overflow-hidden">
       {/* Subtle Christmas Accent Elements */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Subtle Christmas Elements */}
@@ -266,11 +266,11 @@ export default function Home() {
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
-            alt="Christmas party background" 
+            src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+            alt="Christmas lights bokeh background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/50"></div>
         </div>
         
         <div className="text-center space-y-8 relative z-10">
@@ -372,7 +372,7 @@ export default function Home() {
       </Section>
 
       {/* About Section */}
-      <Section id="about" className="bg-white">
+      <Section id="about" className="bg-christmas-red">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
@@ -391,14 +391,6 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                alt="Santa at party" 
-                className="w-full h-80 object-cover rounded-2xl shadow-lg"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
-            </div>
             <div className="bg-gray-50 p-8 rounded-2xl border border-gray-200">
               <p className="text-xl font-bold text-black leading-relaxed">
                 I'm Jolly AF — the loud laugh, big red suit, and zero boring bits. Expect crowd banter, a few roasts, and pics you'll still laugh at in July. Clean(ish) or spicy — your call.
@@ -461,16 +453,8 @@ export default function Home() {
       </Section>
 
       {/* Packages Section */}
-      <Section id="packages" className="bg-white relative">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-            alt="Christmas decorations background" 
-            className="w-full h-full object-cover opacity-10"
-          />
-        </div>
-        <div className="text-center mb-16 relative z-10">
+      <Section id="packages" className="bg-christmas-red">
+        <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -489,7 +473,7 @@ export default function Home() {
           </motion.p>
         </div>
         
-        <div className="grid md:grid-cols-4 gap-8 relative z-10">
+        <div className="grid md:grid-cols-4 gap-8">
           <PackageCard
             title="30 Minutes"
             price="$150"
@@ -543,7 +527,7 @@ export default function Home() {
       </Section>
 
       {/* Gallery Section */}
-      <Section id="gallery" className="bg-white">
+      <Section id="gallery" className="bg-christmas-red">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
@@ -564,34 +548,23 @@ export default function Home() {
         </div>
         
         <div className="grid md:grid-cols-3 gap-6">
-          {[
-            { src: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", alt: "Christmas party 1" },
-            { src: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", alt: "Christmas party 2" },
-            { src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 3" },
-            { src: "https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 4" },
-            { src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 5" },
-            { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", alt: "Christmas party 6" }
-          ].map((image, i) => (
+          {[1, 2, 3, 4, 5, 6].map((i) => (
             <motion.div 
               key={i} 
-              className="aspect-square rounded-2xl overflow-hidden border border-gray-200 hover:border-christmas-gold/40 transition-all duration-300"
+              className="aspect-square bg-gray-50 rounded-2xl flex items-center justify-center text-gray-400 border border-gray-200 hover:border-christmas-gold/40 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05, y: -5 }}
             >
-              <img 
-                src={image.src} 
-                alt={image.alt}
-                className="w-full h-full object-cover"
-              />
+              <span className="text-6xl">📸</span>
             </motion.div>
           ))}
         </div>
       </Section>
 
       {/* FAQ Section */}
-      <Section id="faq" className="bg-white">
+      <Section id="faq" className="bg-christmas-red">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
@@ -651,7 +624,7 @@ export default function Home() {
       </Section>
 
       {/* Booking Section */}
-      <Section id="booking" className="bg-white">
+      <Section id="booking" className="bg-christmas-red">
         <div className="text-center mb-16">
           <motion.h2 
             className="text-5xl font-display font-bold text-black mb-6"
